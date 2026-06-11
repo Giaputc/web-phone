@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import styles from './Header.module.css';
 
@@ -15,7 +16,6 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  // Hàm cuộn mượt đến section
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -27,12 +27,19 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Logo */}
+        {/* Logo - Kích thước do width/height quyết định */}
         <div className={styles.logo}>
           <Link href="/" className={styles.logoLink}>
             <div className={styles.logoWrapper}>
-              <div className={styles.logoIcon}>📱</div>
-              <span className={styles.logoText}>TDK</span>
+              <Image 
+                src="/logo.png" 
+                alt="TDK Logo"
+                width={100}
+                height={100}
+                className={styles.logoImage}
+                priority
+              />
+              <span className={styles.logoText}></span>
             </div>
           </Link>
         </div>
@@ -76,14 +83,10 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Button Tư vấn Desktop */}
-        <button className={styles.btnConsult}>
-          Nhận tư vấn
-        </button>
+        <button className={styles.btnConsult}>Nhận tư vấn</button>
 
-        {/* Mobile Menu Button */}
         <button 
-          className={styles.mobileMenuBtn}
+          className={`${styles.mobileMenuBtn} ${isMenuOpen ? styles.open : ''}`}
           onClick={toggleMenu}
           aria-label="Menu"
           type="button"
@@ -98,41 +101,27 @@ export default function Header() {
           <ul className={styles.mobileNavList}>
             <li><Link href="/" className={styles.mobileNavLink} onClick={closeMenu}>Trang chủ</Link></li>
             <li>
-              <button 
-                onClick={() => scrollToSection('gioi-thieu')} 
-                className={styles.mobileNavButton}
-              >
+              <button onClick={() => scrollToSection('gioi-thieu')} className={styles.mobileNavButton}>
                 Giới thiệu
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('thiet-bi')} 
-                className={styles.mobileNavButton}
-              >
+              <button onClick={() => scrollToSection('thiet-bi')} className={styles.mobileNavButton}>
                 Thiết bị có sẵn
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('cau-hoi')} 
-                className={styles.mobileNavButton}
-              >
+              <button onClick={() => scrollToSection('cau-hoi')} className={styles.mobileNavButton}>
                 Câu hỏi thường gặp
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('lien-he')} 
-                className={styles.mobileNavButton}
-              >
+              <button onClick={() => scrollToSection('lien-he')} className={styles.mobileNavButton}>
                 Liên hệ
               </button>
             </li>
             <li>
-              <button className={styles.mobileBtnConsult} onClick={closeMenu}>
-                Nhận tư vấn
-              </button>
+              <button className={styles.mobileBtnConsult} onClick={closeMenu}>Nhận tư vấn</button>
             </li>
           </ul>
         </div>

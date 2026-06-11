@@ -22,6 +22,14 @@ export default function PhanGioiThieu() {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Hàm cuộn đến section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -49,13 +57,31 @@ export default function PhanGioiThieu() {
             </div>
             
             <div className={styles.nhomNut}>
-              <button className={styles.nutChinh}>Nhận báo giá nhanh</button>
-              <button className={styles.nutPhu}>Xem thiết bị</button>
+              {/* Nút Nhận báo giá nhanh - cuộn đến gói thuê */}
+              <button 
+                className={styles.nutChinh}
+                onClick={() => scrollToSection('goi-thue')}
+              >
+                Nhận báo giá nhanh
+              </button>
+              
+              {/* Nút Xem thiết bị - cuộn đến thiết bị có sẵn */}
+              <button 
+                className={styles.nutPhu}
+                onClick={() => scrollToSection('thiet-bi')}
+              >
+                Xem thiết bị
+              </button>
             </div>
           </div>
 
           {/* Phần slider ảnh bên phải */}
           <div className={styles.noiDung1}>
+            <div className={styles.sectionTitleWrapper}>
+              <h3 className={styles.sectionTitle}>🔥 Sản phẩm bán chạy nhất</h3>
+              <div className={styles.sectionTitleLine}></div>
+            </div>
+            
             <div className={styles.sliderContainer}>
               <div className={styles.sliderWrapper}>
                 {images.map((img, idx) => (
@@ -65,7 +91,6 @@ export default function PhanGioiThieu() {
                     style={{ transform: `translateX(-${currentImage * 100}%)` }}
                   >
                     <div className={styles.imagePlaceholder}>
-                      {/* CÁCH 1: Dùng fill (khuyến nghị) */}
                       <Image
                         src={img.url}
                         alt={img.alt}
@@ -74,16 +99,6 @@ export default function PhanGioiThieu() {
                         sizes="(max-width: 768px) 100vw, 50vw"
                         priority={idx === 0}
                       />
-                      
-                      {/* CÁCH 2: Dùng width/height cụ thể
-                      <Image
-                        src={img.url}
-                        alt={img.alt}
-                        width={500}
-                        height={333}
-                        className={styles.realImage}
-                      />
-                      */}
                     </div>
                   </div>
                 ))}

@@ -1,4 +1,74 @@
-/* Style cho nút điều hướng (giống Link) */
+/* ========== HEADER STYLES ========== */
+
+/* Header chính */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ========== LOGO ========== */
+.logo {
+  flex-shrink: 0;
+}
+
+.logoLink {
+  text-decoration: none;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  object-fit: contain;
+  display: block;
+}
+
+/* ========== DESKTOP NAVIGATION ========== */
+.nav {
+  flex: 1;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #ffd89b;
+  transform: translateY(-2px);
+}
+
 .navButton {
   background: none;
   border: none;
@@ -16,109 +86,12 @@
   transform: translateY(-2px);
 }
 
-/* Mobile nav button */
-.mobileNavButton {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-}
-
-.mobileNavButton:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.mobileNavButton:active {
-  transform: scale(0.98);
-}
-/* Header Styles */
-.header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Logo */
-.logo {
-  flex-shrink: 0;
-}
-
-.logoLink {
-  text-decoration: none;
-}
-
-.logoWrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logoIcon {
-  font-size: 24px;
-}
-
-.logoText {
-  font-weight: 700;
-  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 20px;
-  white-space: nowrap;
-}
-
-/* Desktop Navigation */
-.nav {
-  flex: 1;
-}
-
-.navList {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 24px;
-  justify-content: center;
-}
-
-.navLink {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-/* Button Desktop */
+/* ========== BUTTON DESKTOP ========== */
 .btnConsult {
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 8px 24px;
   border-radius: 50px;
   font-weight: 600;
   font-size: 15px;
@@ -128,21 +101,23 @@
   flex-shrink: 0;
 }
 
-/* Mobile Menu Button - QUAN TRỌNG */
+.btnConsult:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+}
+
+/* ========== MOBILE MENU BUTTON ========== */
 .mobileMenuBtn {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 12px; /* Tăng padding để dễ bấm */
+  padding: 12px;
   flex-shrink: 0;
   z-index: 1001;
   position: relative;
-  /* Đảm bảo button có thể click được */
-  pointer-events: auto;
 }
 
-/* Style cho hamburger icon */
 .hamburger {
   display: block;
   width: 25px;
@@ -150,6 +125,7 @@
   background: white;
   position: relative;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .hamburger::before,
@@ -160,6 +136,7 @@
   height: 3px;
   background: white;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .hamburger::before {
@@ -169,20 +146,34 @@
 .hamburger::after {
   bottom: -8px;
 }
-/* Mobile Menu Panel - CHỈ RỘNG BẰNG NỘI DUNG */
+
+.mobileMenuBtn.open .hamburger {
+  background: transparent;
+}
+
+.mobileMenuBtn.open .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.mobileMenuBtn.open .hamburger::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* ========== MOBILE MENU PANEL ========== */
 .mobileMenu {
-  position: fixed;
-  top: 70px;
-  right: 20px;  /* Cách lề phải 20px */
-  left: auto;   /* Không dàn tràn bên trái */
-  bottom: auto; /* Không dàn tràn dưới */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
   width: auto;
   min-width: 260px;
   max-width: 90vw;
   background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(10, 10, 30, 0.98) 100%);
   backdrop-filter: blur(12px);
   padding: 16px;
-  z-index: 1000;
+  z-index: 9999;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -192,7 +183,7 @@
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -200,7 +191,6 @@
   }
 }
 
-/* Danh sách menu mobile */
 .mobileNavList {
   list-style: none;
   padding: 0;
@@ -210,14 +200,13 @@
   gap: 12px;
 }
 
-/* Link menu mobile */
 .mobileNavLink {
   text-decoration: none;
   color: white;
   font-weight: 500;
   font-size: 16px;
   display: block;
-  padding: 12px 20px;
+  padding: 12px 16px;
   text-align: left;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -230,15 +219,31 @@
   transform: translateX(5px);
 }
 
-.mobileNavLink:active {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(0.98);
+.mobileNavButton {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
 }
 
-/* Nút tư vấn trong menu mobile */
+.mobileNavButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
 .mobileBtnConsult {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 16px;
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   color: white;
   border: none;
@@ -254,49 +259,63 @@
   transform: scale(0.98);
 }
 
-/* Responsive cho màn hình nhỏ hơn */
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navList {
+    gap: 20px;
+  }
+  
+  .navLink,
+  .navButton {
+    font-size: 14px;
+  }
+  
+  .btnConsult {
+    padding: 6px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .btnConsult {
+    display: none;
+  }
+  
+  .mobileMenuBtn {
+    display: block;
+  }
+}
+
+/* Mobile nhỏ */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
   .mobileMenu {
     right: 12px;
     min-width: 220px;
   }
   
-  .mobileNavLink {
-    padding: 10px 16px;
+  .mobileNavLink,
+  .mobileNavButton {
+    padding: 10px 14px;
     font-size: 14px;
   }
   
   .mobileBtnConsult {
-    padding: 10px 16px;
+    padding: 10px 14px;
     font-size: 14px;
-  }
-}
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px 16px;
-  }
-  
-  /* Ẩn navigation desktop */
-  .nav {
-    display: none;
-  }
-  
-  /* Ẩn nút tư vấn desktop */
-  .btnConsult {
-    display: none;
-  }
-  
-  /* HIỆN nút menu mobile */
-  .mobileMenuBtn {
-    display: block;
-  }
-  
-  .logoText {
-    font-size: 16px;
-  }
-  
-  .logoIcon {
-    font-size: 20px;
   }
 }

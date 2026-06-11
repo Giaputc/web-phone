@@ -18,7 +18,7 @@
   margin-bottom: 60px;
 }
 
-/* Nội dung bên trái */
+/* ========== NỘI DUNG BÊN TRÁI ========== */
 .noiDung {
   text-align: left;
 }
@@ -33,6 +33,10 @@
   color: transparent;
   animation: shimmer 3s infinite;
   margin-bottom: 16px;
+  font-style: italic;  /* Chữ in nghiêng */
+  text-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  animation: textShine 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+  transition: transform 0.3s ease;
 }
 
 @keyframes shimmer {
@@ -130,11 +134,59 @@
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
-/* Slider bên phải */
+/* ========== SLIDER BÊN PHẢI ========== */
 .noiDung1 {
   position: relative;
 }
 
+/* Tiêu đề sản phẩm bán chạy */
+.sectionTitleWrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.sectionTitleLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+  margin: 8px auto 0;
+  border-radius: 2px;
+  animation: expandLine 0.8s ease;
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+/* Slider container */
 .sliderContainer {
   background: linear-gradient(135deg, rgba(20, 20, 40, 0.95), rgba(10, 10, 30, 0.98));
   border-radius: 28px;
@@ -154,7 +206,7 @@
 }
 
 .imagePlaceholder {
-    position: relative;
+  position: relative;
   aspect-ratio: 1.5 / 1;
   display: flex;
   flex-direction: column;
@@ -163,17 +215,13 @@
   gap: 16px;
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.1));
   border-radius: 20px;
+  overflow: hidden;
 }
 
-.imageIcon {
-  font-size: 80px;
-}
-
-.imageText {
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-  text-align: center;
+.realImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* Nút điều khiển slider */
@@ -232,7 +280,7 @@
   border-radius: 10px;
 }
 
-/* Phần thống kê */
+/* ========== PHẦN THỐNG KÊ ========== */
 .thongKe {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -272,7 +320,8 @@
 }
 
 /* ========== RESPONSIVE ========== */
-/* Tablet */
+
+/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .heroGrid {
     gap: 30px;
@@ -291,9 +340,13 @@
     padding: 12px 24px;
     font-size: 16px;
   }
+  
+  .sectionTitle {
+    font-size: 20px;
+  }
 }
 
-/* Mobile */
+/* Mobile (dưới 768px) */
 @media (max-width: 768px) {
   .hero {
     padding: 40px 0;
@@ -309,7 +362,7 @@
   }
   
   .tieuDe {
-    font-size: 36px;
+    font-size: 70px;
   }
   
   .tieuDePhu {
@@ -331,6 +384,14 @@
     align-items: center;
   }
   
+  .sectionTitle {
+    font-size: 18px;
+  }
+  
+  .sectionTitleLine {
+    width: 50px;
+  }
+  
   .thongKe {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -342,7 +403,7 @@
   }
 }
 
-/* Mobile nhỏ */
+/* Mobile nhỏ (dưới 480px) */
 @media (max-width: 480px) {
   .tieuDe {
     font-size: 28px;
@@ -367,6 +428,14 @@
     font-size: 14px;
     width: 100%;
     max-width: 250px;
+  }
+  
+  .sectionTitle {
+    font-size: 16px;
+  }
+  
+  .sectionTitleLine {
+    width: 40px;
   }
   
   .thongKe {
@@ -403,11 +472,11 @@
     font-size: 16px;
   }
   
-  .imageIcon {
-    font-size: 50px;
+  .sliderPrev {
+    left: 15px;
   }
   
-  .imageText {
-    font-size: 14px;
+  .sliderNext {
+    right: 15px;
   }
 }
