@@ -1,0 +1,79 @@
+/* ========== STYLE DÙNG CHUNG CHO TẤT CẢ CÁC PHẦN ========== */
+
+/* Container chung */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tiêu đề phần chung */
+.tieuDePhan {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tieuDePhan .tieuDe {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.tieuDePhan .tieuDePhu {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Grid chung */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* Nút chung */
+.btnPrimary {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 60px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(238, 90, 36, 0.3);
+}
+
+.btnSecondary {
+  padding: 14px 32px;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 60px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* Responsive chung */
+@media (max-width: 768px) {
+  .tieuDePhan .tieuDe {
+    font-size: 28px;
+  }
+  
+  .tieuDePhan .tieuDePhu {
+    font-size: 16px;
+  }
+}

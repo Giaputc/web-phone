@@ -1,26 +1,48 @@
 @import "tailwindcss";
-
+@import '../styles/variables.css';
+/* ========== GLOBAL TYPOGRAPHY SETTINGS ========== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base font sizes */
+  --font-size-base-mobile: 14px;
+  --font-size-base-tablet: 15px;
+  --font-size-base-desktop: 16px;
+  
+  /* Font families */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-family-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Set base font size */
+html {
+  font-size: var(--font-size-base-mobile);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (min-width: 768px) {
+  html {
+    font-size: var(--font-size-base-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: var(--font-size-base-desktop);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent text overflow */
+h1, h2, h3, h4, h5, h6, p, span, a, button {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Improve text rendering */
+* {
+  text-rendering: optimizeLegibility;
 }

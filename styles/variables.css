@@ -1,0 +1,29 @@
+/* Color Variables */
+:root {
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-button: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  --gradient-button-hover: linear-gradient(135deg, #ff5252 0%, #e84118 100%);
+  --gradient-text: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  --gradient-underline: linear-gradient(135deg, #ffd89b 0%, #c7e9fb 100%);
+  
+  --color-white: #ffffff;
+  --color-dark: #333333;
+  --shadow-sm: 0 2px 20px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.3);
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  --border-radius-sm: 10px;
+  --border-radius-md: 50px;
+}
+
+/* Breakpoints */
+:root {
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 968px;
+}

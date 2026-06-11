@@ -1,0 +1,170 @@
+.footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+  padding: 60px 0 20px;
+  margin-top: 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.columnTitle {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  border-radius: 2px;
+}
+
+/* Thông tin liên hệ */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contactIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.contactItem a {
+  color: #ff6b6b;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contactItem a:hover {
+  color: #ee5a24;
+  text-decoration: underline;
+}
+
+/* Danh sách link */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 12px;
+}
+
+.linkList a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.linkList a:hover {
+  color: #ff6b6b;
+  transform: translateX(5px);
+}
+
+/* ========== SOCIAL ICONS - CHỈ ICON ========== */
+.socialIcons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 28px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.socialIcon:hover {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
+.copyright p {
+  margin: 5px 0;
+}
+
+.note {
+  color: #888;
+  font-size: 12px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 80px; /* Thêm padding bottom cho floating bar */
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .socialIcons {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .socialIcons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,224 @@
+/* ========== PHẦN GÓI THUÊ ========== */
+.goiThue {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+/* Container - THÊM MỚI */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tiêu đề phần - THÊM MỚI */
+.tieuDePhan {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tieuDe {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.tieuDePhu {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Grid các card */
+.luoiGoiThue {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.theGoiThue {
+  background: linear-gradient(135deg, rgba(20,20,40,0.95), rgba(10,10,30,0.98));
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 36px 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+
+.theGoiThue:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Card được chọn */
+.selected {
+  border: 2px solid #667eea;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.iconGoi {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tenGoi {
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.moTaGoi {
+  font-size: 14px;
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 28px;
+}
+
+.giaGoi {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 28px;
+  color: #ffd89b;
+}
+
+.donViGia {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+}
+
+.danhSachThongTin {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.danhSachThongTin li {
+  padding: 10px 0;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkIcon {
+  width: 22px;
+  height: 22px;
+  background: rgba(255,216,155,0.2);
+  color: #ffd89b;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.nutChonGoi {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.nutChonGoi:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.nutIcon {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.nutChonGoi:hover .nutIcon {
+  transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .luoiGoiThue {
+    gap: 25px;
+  }
+  
+  .tenGoi {
+    font-size: 24px;
+  }
+  
+  .giaGoi {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .goiThue {
+    padding: 50px 0;
+  }
+  
+  .tieuDe {
+    font-size: 28px;
+  }
+  
+  .tieuDePhu {
+    font-size: 16px;
+  }
+  
+  .luoiGoiThue {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .theGoiThue {
+    padding: 28px 24px;
+  }
+  
+  .tenGoi {
+    font-size: 26px;
+  }
+  
+  .giaGoi {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theGoiThue {
+    padding: 24px 20px;
+  }
+  
+  .tenGoi {
+    font-size: 24px;
+  }
+  
+  .giaGoi {
+    font-size: 32px;
+  }
+  
+  .danhSachThongTin li {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  
+  .nutChonGoi {
+    padding: 12px;
+    font-size: 15px;
+  }
+}

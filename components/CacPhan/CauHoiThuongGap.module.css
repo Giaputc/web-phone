@@ -1,0 +1,167 @@
+/* ========== PHẦN CÂU HỎI THƯỜNG GẶP ========== */
+.cauHoi {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tiêu đề phần */
+.tieuDePhan {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tieuDe {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.tieuDePhu {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Grid câu hỏi */
+.luoiCauHoi {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Mỗi item câu hỏi */
+.itemCauHoi {
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(10, 10, 30, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.itemCauHoi:hover {
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+}
+
+/* Nút câu hỏi */
+.cauHoiNut {
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.cauHoiNut:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Icon + / - */
+.iconCauHoi {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffd89b;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.cauHoiNut:hover .iconCauHoi {
+  transform: scale(1.1);
+}
+
+/* Câu trả lời */
+.cauTraLoi {
+  padding: 0 24px 24px 24px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+/* Tablet */
+@media (max-width: 768px) {
+  .cauHoi {
+    padding: 50px 0;
+  }
+  
+  .tieuDe {
+    font-size: 28px;
+  }
+  
+  .tieuDePhu {
+    font-size: 16px;
+  }
+  
+  .cauHoiNut {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  
+  .cauTraLoi {
+    padding: 0 20px 20px 20px;
+    font-size: 13px;
+  }
+  
+  .iconCauHoi {
+    font-size: 22px;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .tieuDe {
+    font-size: 24px;
+  }
+  
+  .tieuDePhu {
+    font-size: 14px;
+  }
+  
+  .cauHoiNut {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  
+  .cauTraLoi {
+    padding: 0 16px 16px 16px;
+    font-size: 12px;
+  }
+  
+  .iconCauHoi {
+    font-size: 20px;
+  }
+}

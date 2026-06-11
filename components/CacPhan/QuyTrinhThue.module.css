@@ -1,0 +1,270 @@
+/* ========== PHẦN QUY TRÌNH THUÊ ========== */
+.quyTrinh {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Tiêu đề phần */
+.tieuDePhan {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tieuDe {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 15px;
+}
+
+.tieuDePhu {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Grid các bước */
+.luoiBuoc {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Mỗi bước */
+.buoc {
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+}
+
+/* Card chứa nội dung */
+.card {
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(10, 10, 30, 0.98) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+}
+
+/* Số thứ tự - Nằm trong card, nổi bật */
+.soBuoc {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.card:hover .soBuoc {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+/* Tên bước */
+.tenBuoc {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Mô tả bước */
+.moTaBuoc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mũi tên nối giữa các bước */
+.muiTen {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.muiTenIcon {
+  font-size: 24px;
+  color: #667eea;
+  animation: moveArrow 1.5s ease-in-out infinite;
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes moveArrow {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 1;
+  }
+}
+
+/* Bước cuối không có mũi tên */
+.buoc:last-child .muiTen {
+  display: none;
+}
+
+/* ========== RESPONSIVE ========== */
+/* Tablet */
+@media (max-width: 1024px) {
+  .luoiBuoc {
+    justify-content: center;
+  }
+  
+  .buoc {
+    flex: 0 0 calc(33.33% - 20px);
+  }
+  
+  .muiTen {
+    display: none;
+  }
+  
+  .soBuoc {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .tenBuoc {
+    font-size: 16px;
+  }
+  
+  .moTaBuoc {
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .quyTrinh {
+    padding: 50px 0;
+  }
+  
+  .tieuDe {
+    font-size: 28px;
+  }
+  
+  .tieuDePhu {
+    font-size: 16px;
+  }
+  
+  .luoiBuoc {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .buoc {
+    flex: 1;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .soBuoc {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  
+  .tenBuoc {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .moTaBuoc {
+    text-align: left;
+    font-size: 13px;
+  }
+  
+  .muiTen {
+    display: none;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .tieuDe {
+    font-size: 24px;
+  }
+  
+  .tieuDePhu {
+    font-size: 14px;
+  }
+  
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
+  
+  .soBuoc {
+    margin: 0 auto 12px;
+  }
+  
+  .tenBuoc {
+    text-align: center;
+  }
+  
+  .moTaBuoc {
+    text-align: center;
+  }
+  
+  .tenBuoc {
+    font-size: 15px;
+  }
+  
+  .moTaBuoc {
+    font-size: 12px;
+  }
+}
