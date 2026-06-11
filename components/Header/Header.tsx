@@ -7,17 +7,21 @@ import styles from './Header.module.css';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Hàm toggle menu đơn giản
   const toggleMenu = () => {
-    console.log('=== MENU BUTTON CLICKED ===');
-    console.log('Current state:', isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
-    console.log('New state will be:', !isMenuOpen);
   };
 
-  // Hàm đóng menu
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // Hàm cuộn mượt đến section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      closeMenu();
+    }
   };
 
   return (
@@ -37,10 +41,38 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li><Link href="/" className={styles.navLink}>Trang chủ</Link></li>
-            <li><Link href="/gioi-thieu" className={styles.navLink}>Giới thiệu</Link></li>
-            <li><Link href="/cho-thue-iphone" className={styles.navLink}>Cho thuê iPhone</Link></li>
-            <li><Link href="/cau-hoi-thuong-gap" className={styles.navLink}>Câu hỏi thường gặp</Link></li>
-            <li><Link href="/lien-he" className={styles.navLink}>Liên hệ</Link></li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('gioi-thieu')} 
+                className={styles.navButton}
+              >
+                Giới thiệu
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('thiet-bi')} 
+                className={styles.navButton}
+              >
+                Thiết bị có sẵn
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('cau-hoi')} 
+                className={styles.navButton}
+              >
+                Câu hỏi thường gặp
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('lien-he')} 
+                className={styles.navButton}
+              >
+                Liên hệ
+              </button>
+            </li>
           </ul>
         </nav>
 
@@ -49,13 +81,12 @@ export default function Header() {
           Nhận tư vấn
         </button>
 
-        {/* Mobile Menu Button - ĐÃ SỬA */}
+        {/* Mobile Menu Button */}
         <button 
           className={styles.mobileMenuBtn}
           onClick={toggleMenu}
           aria-label="Menu"
           type="button"
-          id="mobile-menu-button"
         >
           <span className={styles.hamburger}></span>
         </button>
@@ -66,10 +97,38 @@ export default function Header() {
         <div className={styles.mobileMenu}>
           <ul className={styles.mobileNavList}>
             <li><Link href="/" className={styles.mobileNavLink} onClick={closeMenu}>Trang chủ</Link></li>
-            <li><Link href="/gioi-thieu" className={styles.mobileNavLink} onClick={closeMenu}>Giới thiệu</Link></li>
-            <li><Link href="/cho-thue-iphone" className={styles.mobileNavLink} onClick={closeMenu}>Cho thuê iPhone</Link></li>
-            <li><Link href="/cau-hoi-thuong-gap" className={styles.mobileNavLink} onClick={closeMenu}>Câu hỏi thường gặp</Link></li>
-            <li><Link href="/lien-he" className={styles.mobileNavLink} onClick={closeMenu}>Liên hệ</Link></li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('gioi-thieu')} 
+                className={styles.mobileNavButton}
+              >
+                Giới thiệu
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('thiet-bi')} 
+                className={styles.mobileNavButton}
+              >
+                Thiết bị có sẵn
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('cau-hoi')} 
+                className={styles.mobileNavButton}
+              >
+                Câu hỏi thường gặp
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('lien-he')} 
+                className={styles.mobileNavButton}
+              >
+                Liên hệ
+              </button>
+            </li>
             <li>
               <button className={styles.mobileBtnConsult} onClick={closeMenu}>
                 Nhận tư vấn

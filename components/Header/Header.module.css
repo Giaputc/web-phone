@@ -1,3 +1,46 @@
+/* Style cho nút điều hướng (giống Link) */
+.navButton {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  font-family: inherit;
+}
+
+.navButton:hover {
+  color: #ffd89b;
+  transform: translateY(-2px);
+}
+
+/* Mobile nav button */
+.mobileNavButton {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.mobileNavButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobileNavButton:active {
+  transform: scale(0.98);
+}
 /* Header Styles */
 .header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -126,18 +169,23 @@
 .hamburger::after {
   bottom: -8px;
 }
-
-/* Mobile Menu Panel */
+/* Mobile Menu Panel - CHỈ RỘNG BẰNG NỘI DUNG */
 .mobileMenu {
   position: fixed;
   top: 70px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  right: 20px;  /* Cách lề phải 20px */
+  left: auto;   /* Không dàn tràn bên trái */
+  bottom: auto; /* Không dàn tràn dưới */
+  width: auto;
+  min-width: 260px;
+  max-width: 90vw;
+  background: linear-gradient(135deg, rgba(20, 20, 40, 0.95) 0%, rgba(10, 10, 30, 0.98) 100%);
+  backdrop-filter: blur(12px);
+  padding: 16px;
   z-index: 1000;
-  overflow-y: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.3s ease;
 }
 
@@ -152,44 +200,77 @@
   }
 }
 
+/* Danh sách menu mobile */
 .mobileNavList {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
+/* Link menu mobile */
 .mobileNavLink {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
-  padding: 12px 16px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.mobileNavLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
 }
 
 .mobileNavLink:active {
   background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.98);
 }
 
+/* Nút tư vấn trong menu mobile */
 .mobileBtnConsult {
   width: 100%;
-  padding: 14px;
+  padding: 12px 20px;
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   color: white;
   border: none;
-  border-radius: 50px;
+  border-radius: 12px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.3s ease;
 }
 
+.mobileBtnConsult:active {
+  transform: scale(0.98);
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 480px) {
+  .mobileMenu {
+    right: 12px;
+    min-width: 220px;
+  }
+  
+  .mobileNavLink {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .mobileBtnConsult {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .container {

@@ -7,11 +7,21 @@ import CauHoiThuongGap from '@/components/CacPhan/CauHoiThuongGap';
 export default function TrangChu() {
   return (
     <main>
-      <PhanGioiThieu />
-      <GoiThue />
-      <ThietBiCoSan />
-      <QuyTrinhThue />
-      <CauHoiThuongGap />
+      <section id="gioi-thieu">
+        <PhanGioiThieu />
+      </section>
+      <section id="goi-thue">
+        <GoiThue />
+      </section>
+      <section id="thiet-bi">
+        <ThietBiCoSan />
+      </section>
+      <section id="quy-trinh">
+        <QuyTrinhThue />
+      </section>
+      <section id="cau-hoi">
+        <CauHoiThuongGap />
+      </section>
     </main>
   );
 }
