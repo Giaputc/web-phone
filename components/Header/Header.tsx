@@ -34,8 +34,8 @@ export default function Header() {
               <Image 
                 src="/logo.png" 
                 alt="TDK Logo"
-                width={100}
-                height={100}
+                width={84}
+                height={84}
                 className={styles.logoImage}
                 priority
               />

@@ -38,6 +38,8 @@
 .logoImage {
   object-fit: contain;
   display: block;
+  background: white;
+  border-radius: 50%;
 }
 
 /* ========== DESKTOP NAVIGATION ========== */
